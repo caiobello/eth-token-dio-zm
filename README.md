@@ -1,6 +1,6 @@
 ## Visão Geral
 
-O ZM Token é um contrato inteligente (smart contract) implementado em Solidity, seguindo o padrão ERC-20. Este README fornece informações detalhadas sobre o token, suas funcionalidades e como utilizá-lo.
+Este é um ETH-Token chamado ZM Token, é um contrato inteligente (smart contract) implementado em Solidity, seguindo o padrão ERC-20. Este README fornece informações detalhadas sobre o token, suas funcionalidades e como utilizá-lo.
 
 ## Informações do Contrato Inteligente
 

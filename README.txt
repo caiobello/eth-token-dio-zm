@@ -1,28 +1,91 @@
-REMIX DEFAULT WORKSPACE
+echo "# ZM Token
 
-Remix default workspace is present when:
-i. Remix loads for the very first time 
-ii. A new workspace is created with 'Default' template
-iii. There are no files existing in the File Explorer
+## Visão Geral
 
-This workspace contains 3 directories:
+O ZM Token é um contrato inteligente (smart contract) implementado em Solidity, seguindo o padrão ERC-20. Este README fornece informações detalhadas sobre o token, suas funcionalidades e como utilizá-lo.
 
-1. 'contracts': Holds three contracts with increasing levels of complexity.
-2. 'scripts': Contains four typescript files to deploy a contract. It is explained below.
-3. 'tests': Contains one Solidity test file for 'Ballot' contract & one JS test file for 'Storage' contract.
+## Informações do Contrato Inteligente
 
-SCRIPTS
+- **Licença:** GPL-3.0
+- **Versão do Solidity:** ^0.8.0
 
-The 'scripts' folder has four typescript files which help to deploy the 'Storage' contract using 'web3.js' and 'ethers.js' libraries.
+## Detalhes do Token
 
-For the deployment of any other contract, just update the contract's name from 'Storage' to the desired contract and provide constructor arguments accordingly 
-in the file `deploy_with_ethers.ts` or  `deploy_with_web3.ts`
+- **Nome:** ZM Token
+- **Símbolo:** ZM
+- **Decimais:** 18
+- **Fornecimento Total:** 10 ether
 
-In the 'tests' folder there is a script containing Mocha-Chai unit tests for 'Storage' contract.
+## Funções
 
-To run a script, right click on file name in the file explorer and click 'Run'. Remember, Solidity file must already be compiled.
-Output from script will appear in remix terminal.
+### \`totalSupply\`
 
-Please note, require/import is supported in a limited manner for Remix supported modules.
-For now, modules supported by Remix are ethers, web3, swarmgw, chai, multihashes, remix and hardhat only for hardhat.ethers object/plugin.
-For unsupported modules, an error like this will be thrown: '<module_name> module require is not supported by Remix IDE' will be shown.
+\`\`\`solidity
+function totalSupply() public view returns (uint256);
+\`\`\`
+
+Retorna o fornecimento total de ZM Tokens.
+
+### \`balanceOf\`
+
+\`\`\`solidity
+function balanceOf(address tokenOwner) public view returns (uint256);
+\`\`\`
+
+Retorna o saldo de ZM Tokens detidos pelo endereço especificado (\`tokenOwner\`).
+
+### \`transfer\`
+
+\`\`\`solidity
+function transfer(address receiver, uint256 numTokens) public returns (bool);
+\`\`\`
+
+Transfere \`numTokens\` ZM Tokens da conta do remetente para o endereço de destino (\`receiver\`). Retorna verdadeiro se a transferência for bem-sucedida.
+
+### \`approve\`
+
+\`\`\`solidity
+function approve(address delegate, uint256 numTokens) public returns (bool);
+\`\`\`
+
+Permite que o \`delegate\` gaste \`numTokens\` em nome do remetente. Retorna verdadeiro se a aprovação for bem-sucedida.
+
+### \`allowance\`
+
+\`\`\`solidity
+function allowance(address owner, address delegate) public view returns (uint);
+\`\`\`
+
+Retorna a quantidade de ZM Tokens que o \`delegate\` está autorizado a gastar em nome do \`owner\`.
+
+### \`transferFrom\`
+
+\`\`\`solidity
+function transferFrom(address owner, address buyer, uint256 numTokens) public returns (bool);
+\`\`\`
+
+Transfere \`numTokens\` ZM Tokens do \`owner\` para o \`buyer\` se o remetente estiver autorizado a fazê-lo. Retorna verdadeiro se a transferência for bem-sucedida.
+
+## Eventos
+
+- \`Transfer\`
+
+  Emitted quando ZM Tokens são transferidos de um endereço para outro.
+
+  \`\`\`solidity
+  event Transfer(address indexed from, address indexed to, uint256 value);
+  \`\`\`
+
+- \`Approval\`
+
+  Emitted quando um endereço é autorizado a gastar ZM Tokens em nome de outro endereço.
+
+  \`\`\`solidity
+  event Approval(address indexed owner, address indexed spender, uint256 value);
+  \`\`\`
+
+## Implantação
+
+O contrato inteligente está atualmente implantado com um fornecimento total inicial de 10 ether. O proprietário do contrato é a conta que o implanta, e o fornecimento total é alocado no saldo do proprietário.
+
+**Observação:** Antes de implantar em uma rede real, considere aprimorar o contrato com recursos adicionais, como funcionalidade de pausa e mecanismos de controle de acesso para uma segurança aprimorada." > README.md

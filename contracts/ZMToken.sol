@@ -13,9 +13,12 @@ interface IERC20{
     function transfer(address recipient, uint256 amount) external returns (bool);
     function approve(address spender, uint256 amount) external returns (bool);
     function transferFrom(address sender, address recipient, uint256 amount) external returns (bool);
+    function burn(uint256 amount) external returns (bool);
+
 
     event Transfer(address indexed from, address indexed to, uint256 value);
     event Approval(address indexed owner, address indexed spender, uint256);
+    event Burn(address indexed account, uint256 value);
 
 }
 
@@ -72,4 +75,15 @@ contract ZMToken is IERC20{
         return true;
     }
 
+    function burn(uint256 amount) external override returns (bool) {
+        require(amount <= balances[msg.sender], "Insufficient balance");
+
+        balances[msg.sender] -= amount;
+        totalSupply_ -= amount;
+
+        emit Transfer(msg.sender, address(0), amount);
+        emit Burn(msg.sender, amount);
+
+        return true;
+    }
 }

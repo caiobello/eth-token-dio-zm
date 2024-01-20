@@ -43,7 +43,7 @@ Este projeto é uma base sólida para a criação e gestão de tokens ERC-20 na 
 function totalSupply() public view returns (uint256);
 ```
 
-Retorna o fornecimento total de ZM Tokens.
+Retorna o fornecimento total de Tokens.
 
 ### balanceOf
 
@@ -51,7 +51,7 @@ Retorna o fornecimento total de ZM Tokens.
 function balanceOf(address account) public view returns (uint256);
 ```
 
-Retorna o saldo de ZM Tokens detidos pelo endereço especificado (\`account\`).
+Retorna o saldo de Tokens detidos pelo endereço especificado (\`account\`).
 
 ### transfer
 
@@ -59,7 +59,7 @@ Retorna o saldo de ZM Tokens detidos pelo endereço especificado (\`account\`).
 function transfer(address recipient, uint256 amount) public returns (bool);
 ```
 
-Transfere \`amount\` ZM Tokens da conta do remetente para o endereço de destino (\`recipient\`). Retorna verdadeiro se a transferência for bem-sucedida.
+Transfere \`amount\` Tokens da conta do remetente para o endereço de destino (\`recipient\`). Retorna verdadeiro se a transferência for bem-sucedida.
 
 ### approve
 
@@ -67,7 +67,7 @@ Transfere \`amount\` ZM Tokens da conta do remetente para o endereço de destino
 function approve(address spender, uint256 amount) public returns (bool);
 ```
 
-Permite que o \`spender\` gaste \`amount\` ZM Tokens em nome do remetente. Retorna verdadeiro se a aprovação for bem-sucedida.
+Permite que o \`spender\` gaste \`amount\` Tokens em nome do remetente. Retorna verdadeiro se a aprovação for bem-sucedida.
 
 ### allowance
 
@@ -75,7 +75,7 @@ Permite que o \`spender\` gaste \`amount\` ZM Tokens em nome do remetente. Retor
 function allowance(address owner, address spender) public view returns (uint256);
 ```
 
-Retorna a quantidade de ZM Tokens que o \`spender\` está autorizado a gastar em nome do \`owner\`.
+Retorna a quantidade de Tokens que o \`spender\` está autorizado a gastar em nome do \`owner\`.
 
 ### transferFrom
 
@@ -83,7 +83,7 @@ Retorna a quantidade de ZM Tokens que o \`spender\` está autorizado a gastar em
 function transferFrom(address sender, address recipient, uint256 amount) public returns (bool);
 ```
 
-Transfere \`amount\` ZM Tokens do \`owner\` para o \`buyer\` se o remetente estiver autorizado a fazê-lo. Retorna verdadeiro se a transferência for bem-sucedida.
+Transfere \`amount\` Tokens do \`owner\` para o \`buyer\` se o remetente estiver autorizado a fazê-lo. Retorna verdadeiro se a transferência for bem-sucedida.
 
 ## Eventos
 
@@ -93,7 +93,7 @@ Transfere \`amount\` ZM Tokens do \`owner\` para o \`buyer\` se o remetente esti
 event Transfer(address indexed from, address indexed to, uint256 value);
 ```
 
-Emitido quando ZM Tokens são transferidos de um endereço para outro.
+Emitido quando Tokens são transferidos de um endereço para outro.
 
 - `Approval`
 
@@ -101,7 +101,7 @@ Emitido quando ZM Tokens são transferidos de um endereço para outro.
 event Approval(address indexed owner, address indexed spender, uint256 value);
 ```
 
-Emitido quando um endereço é autorizado a gastar ZM Tokens em nome de outro endereço.
+Emitido quando um endereço é autorizado a gastar Tokens em nome de outro endereço.
 
 ## Implantação
 
